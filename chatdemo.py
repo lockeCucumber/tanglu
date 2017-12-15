@@ -26,7 +26,7 @@ from tornado import gen
 from tornado.options import define, options, parse_command_line
 
 define("port", default=1314, help="run on the given port", type=int)
-define("debug", default=False, help="run in debug mode")
+define("debug", default=True, help="run in debug mode")
 
 
 class MessageBuffer(object):
