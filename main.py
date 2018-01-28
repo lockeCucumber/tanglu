@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding:utf-8
 
+import os
 import tornado.web
 from tornado.options import define, options, parse_command_line
 from tornado.httpserver import HTTPServer
@@ -15,7 +16,8 @@ define("debug", default=False)
 def make_app():
     settings = {
         "debug": options.debug,
-        "template_loader": FileLoader("templates/")
+        "template_loader": FileLoader("templates/"),
+        "static_path": os.path.join(os.path.dirname(__file__), 'static'),
     }
     urls = love_urls
     return tornado.web.Application(urls, **settings)
