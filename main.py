@@ -7,6 +7,7 @@ from tornado.httpserver import HTTPServer
 from tornado.ioloop import IOLoop
 
 from apps.love.urls import urls as love_urls
+from apps.core.template import FileLoader
 
 define("port", default=1314, help="run on the given port", type=int)
 define("debug", default=False)
@@ -14,6 +15,7 @@ define("debug", default=False)
 def make_app():
     settings = {
         "debug": options.debug,
+        "template_loader": FileLoader("templates/")
     }
     urls = love_urls
     return tornado.web.Application(urls, **settings)

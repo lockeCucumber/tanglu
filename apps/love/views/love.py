@@ -6,5 +6,4 @@ from tornado.web import RequestHandler
 class LoveView(RequestHandler):
 
     def get(self):
-        self.write("test")
-        self.finish()
+        self.render('love/home.html')
