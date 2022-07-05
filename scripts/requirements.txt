@@ -8,7 +8,7 @@ hyperlink==17.3.1
 incremental==17.5.0
 Monotime==1.0
 monotonic==1.4
-pycares==2.3.0
+pycares==4.2.0
 pycurl==7.43.0
 singledispatch==3.4.0.3
 six==1.11.0
